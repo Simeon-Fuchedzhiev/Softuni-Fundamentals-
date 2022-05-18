@@ -1,0 +1,76 @@
+while True:
+    try:
+        number = int(input("Number: "))
+    except ValueError:
+        continue
+    else:
+        break
+number = str(number)
+card_type = ""
+american_express = [34, 37]
+master_card = [51, 52, 53, 54, 55]
+num_len = len(number) - 2
+full_num_len = len(number) - 1
+sum = 0
+sum1 = 0
+digit = 0
+digit1 = 0
+validcard = False
+
+
+def valid_check():
+    if int(number[0]) == 4 and (len(number) == 13 or len(number) == 16) and validcard:
+        card_type = "Visa"
+    elif int(number[0:2]) in american_express and len(number) == 15 and validcard:
+        card_type = "American express"
+    elif int(number[0:2]) in master_card and len(number) == 16 and validcard:
+        card_type = "MasterCard"
+    else:
+        card_type = "Invalid"
+    print(card_type)
+
+
+for i in range(num_len, -1, -1):
+    if len(number) % 2 == 0:
+        if i % 2 == 0:
+            if int(number[i]) >= 5:
+                digit = (int(number[i])*2)
+                digit = str(digit)
+                digit1 = int(digit[0]) + int(digit[1])
+                sum += digit1
+            else:
+                sum += (int(number[i])*2)
+        else:
+            continue
+    elif len(number) % 2 != 0:
+        if i % 2 != 0:
+            if int(number[i]) >= 5:
+                digit = (int(number[i]) * 2)
+                digit = str(digit)
+                digit1 = int(digit[0]) + int(digit[1])
+                sum += digit1
+            else:
+                sum += (int(number[i]) * 2)
+        else:
+            continue
+digit = 0
+digit1 = 0
+for i in range(full_num_len, -1, -1):
+    if len(number) % 2 == 0:
+        if i % 2 != 0:
+            sum1 += int(number[i])
+        else:
+            continue
+    elif len(number) % 2 != 0:
+        if i % 2 == 0:
+            sum1 += int(number[i])
+        else:
+            continue
+
+valid = sum + sum1
+valid = str(valid)
+ads = valid[1]
+if valid[1] == "0":
+    validcard = True
+
+valid_check()
