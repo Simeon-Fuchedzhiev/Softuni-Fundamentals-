@@ -1,0 +1,17 @@
+movie_budget = float(input())
+number_people = int(input())
+clothes_price_per_person = float(input())
+defisit = 0
+
+decor_price = movie_budget * 0.10
+if number_people > 150:
+    clothes_price_per_person = clothes_price_per_person * 0.90
+movie_price = (number_people * clothes_price_per_person) + decor_price
+if movie_price > movie_budget:
+    defisit = abs(movie_price - movie_budget)
+    print("Not enough money!")
+    print(f"Wingard needs {defisit:.2f} leva more.")
+elif movie_price <= movie_budget:
+    defisit = abs(movie_price - movie_budget)
+    print("Action!")
+    print(f"Wingard starts filming with {defisit:.2f} leva left.")
