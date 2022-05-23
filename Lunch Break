@@ -1,0 +1,16 @@
+from math import ceil
+
+show_name = str(input())
+ep_time = int(input())
+break_time = int(input())
+
+lunch_time = break_time / 8
+relax_time = break_time / 4
+break_time_total = break_time - (lunch_time + relax_time)
+
+if break_time_total >= ep_time:
+    leftover_time = ceil(break_time_total - ep_time)
+    print(f"You have enough time to watch {show_name} and left with {leftover_time} minutes free time.")
+else:
+    needed_time = ceil(ep_time - break_time_total)
+    print(f"You don't have enough time to watch {show_name}, you need {needed_time} more minutes.")
