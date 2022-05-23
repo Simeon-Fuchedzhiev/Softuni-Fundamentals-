@@ -1,0 +1,17 @@
+events = ["coding", "dog", "cat", "movie"]
+events1 = ["CODING", "DOG", "CAT", "MOVIE"]
+coffe = 0
+while True:
+    event = str(input())
+    if event == "END":
+        break
+    if event in events:
+        coffe += 1
+    elif event in events1:
+        coffe += 2
+    else:
+        continue
+if coffe >5:
+    print("You need extra sleep")
+else:
+    print(coffe)
