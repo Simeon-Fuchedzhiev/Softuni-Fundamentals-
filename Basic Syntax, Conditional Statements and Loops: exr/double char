@@ -1,0 +1,10 @@
+str = 1
+while True:
+    str = input()
+    if str == "End":
+        break
+    if str == "SoftUni":
+        continue
+    for i in str:
+        print(f"{i}{i}", end="")
+    print("")
