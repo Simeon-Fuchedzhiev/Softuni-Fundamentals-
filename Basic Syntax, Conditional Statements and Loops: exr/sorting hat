@@ -1,0 +1,21 @@
+success = False
+while True:
+    name = input()
+    length = len(name)
+    if name == "Voldemort":
+        success = True
+        print("You must not speak of that name!")
+        break
+    if name == "Welcome!":
+        break
+    if length < 5:
+        print(f"{name} goes to Gryffindor.")
+    elif length == 5:
+        print(f"{name} goes to Slytherin.")
+    elif length == 6:
+        print(f"{name} goes to Ravenclaw.")
+    elif length > 6:
+        print(f"{name} goes to Hufflepuff.")
+
+if success == False:
+    print("Welcome to Hogwarts.")
