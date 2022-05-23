@@ -1,0 +1,14 @@
+orders = int(input())
+total = 0
+
+for i in range(orders):
+    caps_price = float(input())
+    days = int(input())
+    caps_per_day = int(input())
+
+    price = caps_price * days * caps_per_day
+    total += price
+    if price > 0:
+        print(f"The price for the coffee is: ${price:.2f}")
+if total > 0:
+    print(f"Total: ${total:.2f}")
