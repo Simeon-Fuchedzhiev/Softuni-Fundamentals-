@@ -1,0 +1,20 @@
+number = int(input())
+total = 0
+bonus = 0
+if number <= 100:
+    total = number + 5
+    bonus = total - number
+elif 100 < number <= 1000:
+    total = number * 1.2
+    bonus = total - number
+elif 1000 < number:
+    total = number * 1.1
+    bonus = total - number
+if number % 2 == 0:
+    bonus = bonus + 1
+    total = total + 1
+elif number % 10 == 5:
+    bonus = bonus + 2
+    total = total + 2
+print(bonus)
+print(total)
