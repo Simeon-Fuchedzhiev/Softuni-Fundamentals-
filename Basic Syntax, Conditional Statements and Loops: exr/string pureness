@@ -1,0 +1,13 @@
+n = int(input())
+
+for i in range(n):
+    string = input()
+    if "," in string:
+        print(f"{string} is not pure!")
+    elif "." in string:
+        print(f"{string} is not pure!")
+    elif "_" in string:
+        print(f"{string} is not pure!")
+    else:
+        print(f"{string} is pure.")
+
